@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import ClickMeButton from './components/ClickMeButton';
+import DisplayTab from './components/DisplayTab';
+import UserManagement from './components/UserManagement';
+import DynamicDivForm from './components/DynamicDivForm';
+// import App from './App';
+// import CounterApp from './CounterApp';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends Component  {
+  render(){
+    const tab1 = ["hello", "world", "from", "react"];
+    const tab2 = ["apple", "orange", "banana"];
+    return (
+      <div>
+      <ClickMeButton />
+  
+      <h3>Table 1:</h3>
+      <DisplayTab table={tab1} />
+      
+      <h3>Table 2:</h3>
+      <DisplayTab table={tab2} />
+
+      <UserManagement/>
+      <DynamicDivForm/>
     </div>
-  );
+     
+     );
+  }
 }
+
 
 export default App;
